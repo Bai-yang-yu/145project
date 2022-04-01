@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>
+<script>
+    var timer;
+    timer = setInterval(
+        function () {
+            var dateNow = new Date();
+            var dateAfter = new Date(2022, 4, 1);
+            var time = dateAfter - dateNow;
+            var d = Math.floor(time / 1000 / 60 / 60 / 24);
+            d = d > 9 ? d : '0' + d;
+            var h = Math.floor(time / 1000 / 60 / 60 % 24);
+            h = h > 9 ? h : '0' + h;
+            var m = Math.floor(time / 1000 / 60 % 60);
+            m = m > 9 ? m : '0' + m;
+            var s = Math.floor(time / 1000 % 60);
+            s = s > 9 ? s : '0' + s;
+            var timeline = '距离五一还有:' + d + '天' + h + '时' + m + '分' + s + '秒';
+            var div_ = document.getElementsByTagName('div')[0];
+            div_.innerHTML = timeline;
+        }, 1000
+    )
+
+
+</script>
